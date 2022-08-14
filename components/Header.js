@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 export default function Header() {
   const lottieTemplate = (
     <Player
-      className="absolute bottom-0 right-0 w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
+      className="absolute bottom-0 right-0 top-[9rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
       autoplay={true}
       loop={true}
       src="https://assets6.lottiefiles.com/packages/lf20_hi95bvmx/WebdesignBg.json"
@@ -13,7 +13,7 @@ export default function Header() {
 
   const lottieCustom = (
     <Player
-      className="absolute bottom-0 right-0 top-[7rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
+      className="absolute bottom-0 right-[-0.5rem] top-[7rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
       autoplay={true}
       loop={true}
       speed={0.5}
@@ -23,7 +23,7 @@ export default function Header() {
 
   const lottieDeploy = (
     <Player
-      className="absolute -bottom-6 right-10 w-[200px] md:w-[350px] lg:-top-4 lg:-right-4 lg:h-[350px] lg:w-[350px]"
+      className="absolute -bottom-6 right-10 top-[9rem]  w-[250px] md:w-[350px] md:-top-4 lg:-top-4 lg:-right-4 lg:h-[350px] lg:w-[350px]"
       autoplay={true}
       loop={true}
       src="https://assets8.lottiefiles.com/packages/lf20_tcwozhzv/MarketingCampaignsViralMethods.json"
@@ -55,14 +55,14 @@ export default function Header() {
         setLottieValue("lottieTemplate");
         setLottie(lottieTemplate);
       }
-    }, 5000);
+    }, 5500);
     return () => clearInterval(interval);
   });
 
   return (
     <div>
       <div className="container mx-auto px-6 lg:px-32">
-        <div className="relative mt-10 h-72 rounded-3xl bg-sky-500 shadow-lg lg:mx-28 lg:mt-20">
+        <div className="relative mt-10 h-96 md:h-72 rounded-3xl bg-sky-500 shadow-lg lg:mx-28 lg:mt-20">
           <div className="flex justify-between p-10 lg:pt-16">
             <div>
               <h6 className="text-sm font-medium text-white">

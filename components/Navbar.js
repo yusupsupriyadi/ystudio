@@ -5,8 +5,8 @@ export default function Navbar() {
     <div>
       <nav>
         <div className="container mx-auto px-8 lg:px-32">
-          <div className="flex justify-between pt-6 lg:pb-6">
-            <a href="">Hello</a>
+          <div className="flex justify-between items-center pt-6 lg:pb-6">
+            <a href="#" className="text-xl font-bold text-slate-600">Ystudio</a>
             <div className="flex gap-8">
               <div id="nav-list" className="hidden md:block">
                 <ul className="flex gap-8 text-sm">
