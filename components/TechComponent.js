@@ -34,7 +34,7 @@ export default function TechComponent() {
                             autoplay={true}
                             loop={true}
                             speed={0.4}
-                            src="https://assets5.lottiefiles.com/packages/lf20_EdAmna.json"
+                            src="json/lottieArrowDown.json"
                         ></Player>
                     </div>
                     <div className="flex items-center gap-8">

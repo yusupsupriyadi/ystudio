@@ -2,44 +2,27 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import React, { useEffect, useState } from "react";
 
 export default function Header() {
-  const lottieTemplate = (
-    <Player
-      className="absolute bottom-0 right-0 top-[9rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
-      autoplay={true}
-      loop={true}
-      src="https://assets6.lottiefiles.com/packages/lf20_hi95bvmx/WebdesignBg.json"
-    ></Player>
-  );
-
-  const lottieCustom = (
-    <Player
-      className="absolute bottom-0 right-[-0.5rem] top-[7rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]"
-      autoplay={true}
-      loop={true}
-      speed={0.5}
-      src="https://assets6.lottiefiles.com/private_files/lf30_pkibk91l.json"
-    ></Player>
-  );
-
-  const lottieDeploy = (
-    <Player
-      className="absolute -bottom-6 right-10 top-[9rem]  w-[250px] md:w-[350px] md:-top-4 lg:-top-4 lg:-right-4 lg:h-[350px] lg:w-[350px]"
-      autoplay={true}
-      loop={true}
-      src="https://assets8.lottiefiles.com/packages/lf20_tcwozhzv/MarketingCampaignsViralMethods.json"
-    ></Player>
-  );
-
-  const [lottie, setLottie] = useState(lottieTemplate);
+  const [classLottie1, setClassLottie1] = useState();
+  const [classLottie2, setClassLottie2] = useState('hidden');
+  const [classLottie3, setClassLottie3] = useState('hidden');
   const [lottieValue, setLottieValue] = useState("lottieTemplate");
 
   const handleClick = (e) => {
     if (e === "lottieTemplate") {
-      setLottie(lottieTemplate);
+      setLottieValue("lottieTemplate");
+      setClassLottie1("");
+      setClassLottie2("hidden");
+      setClassLottie3("hidden");
     } else if (e === "lottieCustom") {
-      setLottie(lottieCustom);
+      setLottieValue("lottieCustom");
+      setClassLottie1("hidden");
+      setClassLottie2("");
+      setClassLottie3("hidden");
     } else if (e === "lottieDeploy") {
-      setLottie(lottieDeploy);
+      setLottieValue("lottieDeploy");
+      setClassLottie1("hidden");
+      setClassLottie2("hidden");
+      setClassLottie3("");
     }
   };
 
@@ -47,13 +30,19 @@ export default function Header() {
     const interval = setInterval(() => {
       if (lottieValue === "lottieTemplate") {
         setLottieValue("lottieCustom");
-        setLottie(lottieCustom);
+        setClassLottie1("hidden");
+        setClassLottie2("");
+        setClassLottie3("hidden");
       } else if (lottieValue === "lottieCustom") {
         setLottieValue("lottieDeploy");
-        setLottie(lottieDeploy);
+        setClassLottie1("hidden");
+        setClassLottie2("hidden");
+        setClassLottie3("");
       } else if (lottieValue === "lottieDeploy") {
         setLottieValue("lottieTemplate");
-        setLottie(lottieTemplate);
+        setClassLottie1("");
+        setClassLottie2("hidden");
+        setClassLottie3("hidden");
       }
     }, 5500);
     return () => clearInterval(interval);
@@ -74,7 +63,27 @@ export default function Header() {
                 ----Responsive
               </h1>
             </div>
-            <div>{lottie}</div>
+            <div>
+              <Player
+                className={classLottie1 + ` absolute bottom-0 right-0 top-[9rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px]`}
+                autoplay={true}
+                loop={true}
+                src="json/lottieTemplate.json"
+              ></Player>
+              <Player
+                className={classLottie2 + ` absolute bottom-0 right-[-0.5rem] top-[7rem] w-[300px] md:-top-4 md:w-[400px] lg:-top-16 lg:-right-10 lg:h-[400px] lg:w-[400px] `}
+                autoplay={true}
+                loop={true}
+                speed={0.5}
+                src="json/lottieWebCustom.json"
+              ></Player>
+              <Player
+                className={classLottie3 + ` absolute -bottom-6 right-10 top-[9rem]  w-[250px] md:w-[350px] md:-top-4 lg:-top-4 lg:-right-4 lg:h-[350px] lg:w-[350px]`}
+                autoplay={true}
+                loop={true}
+                src="json/lottieWebDeploy.json"
+              ></Player>
+            </div>
           </div>
           <div className="absolute -bottom-5 left-10 hidden md:block lg:block">
             <div className="flex gap-2">
@@ -115,7 +124,7 @@ export default function Header() {
             autoplay={true}
             loop={true}
             speed={0.4}
-            src="https://assets5.lottiefiles.com/packages/lf20_EdAmna.json"
+            src="json/lottieArrowDown.json"
           ></Player>
         </div>
       </div>
